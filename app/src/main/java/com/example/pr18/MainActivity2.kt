@@ -1,4 +1,6 @@
 package com.example.pr18
+import android.annotation.SuppressLint
+import android.app.Activity
 import android.content.Intent
 import android.content.SharedPreferences
 import android.os.Bundle
@@ -9,7 +11,8 @@ import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
-import main2
+import last
+import main3
 
 class MainActivity2 : AppCompatActivity() {
 
@@ -77,9 +80,11 @@ class MainActivity2 : AppCompatActivity() {
         editor.apply()
     }
 
+    @SuppressLint("SuspiciousIndentation")
     private fun navigateToMainActivity() {
-        val intent = Intent(this, main2::class.java)
-        startActivity(intent)
-        finish()
+        val intent = Intent(this, last::class.java)
+            startActivity(intent)
+
+
     }
 }

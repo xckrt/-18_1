@@ -18,4 +18,10 @@
     <string name="vvodpass">Введите пароль</string>
     <string name="enter">Войти</string>
     <string name="vxod">Вход</string>
+    <string-array name="currency_array">
+        <item>USD</item>
+        <item>EUR</item>
+        <item>GBP</item>
+        <item>RUB</item>
+    </string-array>
 </resources>

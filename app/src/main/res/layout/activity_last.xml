@@ -1,4 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -6,43 +5,46 @@
     android:background="@drawable/bckgr"
     android:padding="16dp">
 
-    <EditText
-        android:layout_marginTop="50sp"
-        android:id="@+id/etCurrency"
+    <Spinner
+        android:layout_marginTop="50dp"
+        android:id="@+id/spinnerCurrency"
+        android:entries="@array/currency_array"
+        android:background="@color/white"
+
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="@string/vvodvalue"
-        android:textColorHint="@color/white"
-        android:backgroundTint="@color/white"/>
+        android:layout_height="wrap_content" />
 
     <EditText
-        android:layout_marginTop="20sp"
+        android:layout_marginTop="50dp"
         android:id="@+id/etAmount"
-        android:layout_width="match_parent"
         android:textColorHint="@color/white"
+        android:backgroundTint="@color/white"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="@string/vvodsum"
-        android:backgroundTint="@color/white"/>
+        android:inputType="numberDecimal" />
 
     <Button
-        android:layout_marginTop="350sp"
+        android:layout_marginTop="400dp"
         android:id="@+id/btnSave"
-        android:background="@drawable/button"
         android:layout_width="match_parent"
         android:textColor="@color/white"
-        android:textAllCaps="false"
         android:textSize="20sp"
+        android:background="@drawable/button"
+        android:textAllCaps="false"
         android:layout_height="wrap_content"
-        android:text="@string/save" />
+        android:text="@string/save"
+        android:onClick="handler" />
 
     <Button
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="30dp"
         android:id="@+id/btnView"
-        android:layout_width="match_parent"
         android:textColor="@color/white"
-        android:textAllCaps="false"
         android:textSize="20sp"
         android:background="@drawable/button"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/loadsaved" />
+        android:text="@string/loadsaved"
+        android:textAllCaps="false"
+        android:onClick="handler" />
 </LinearLayout>

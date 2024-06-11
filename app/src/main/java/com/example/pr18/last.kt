@@ -7,10 +7,11 @@ import android.widget.Spinner
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
+import com.example.pr18.R
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
 
-class main2 : AppCompatActivity() {
+class last : AppCompatActivity() {
 
     private lateinit var spinnerCurrency: Spinner
     private lateinit var etAmount: EditText
@@ -19,14 +20,14 @@ class main2 : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        setContentView(R.layout.activity_main3)
 
         spinnerCurrency = findViewById(R.id.spinnerCurrency)
         etAmount = findViewById(R.id.etAmount)
         sharedPreferences = getSharedPreferences("CurrencyDiaryPrefs", MODE_PRIVATE)
         username = intent.getStringExtra("username") ?: ""
 
-        val currencies = arrayOf("USD", "EUR", "GBP", "RUB")
+        val currencies = resources.getStringArray(R.array.currency_array)
         val adapter = ArrayAdapter(this, android.R.layout.simple_spinner_item, currencies)
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
         spinnerCurrency.adapter = adapter
@@ -43,6 +44,7 @@ class main2 : AppCompatActivity() {
                     saveCurrencyData(currency, amount)
                 }
             }
+
             R.id.btnView -> {
                 val alertDialog = AlertDialog.Builder(this)
                 alertDialog.setTitle("Загрузка данных")
